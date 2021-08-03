@@ -1,0 +1,32 @@
+.header {
+    background-color: red;
+    text-align: center;
+}
+
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: white;
+}
+
+h2,h3,h4,h5,h6 {
+    text-decoration: underline;
+}
+
+p {
+    font-family: times new roman;
+    font-size: 20px;
+}
+
+div {
+    font-family: verdana;
+    border: 1px solid black;
+    outline-style: solid;
+}
+
+.footer{
+    background-color: orange;
+    text-align: center;
+}
