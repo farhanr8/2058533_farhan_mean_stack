@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Budget Planner - FT</title>
+    <script src="script.js"></script>
+    <style type="text/css">
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+	<h2>Annual Budget</h2>
+    <div>
+        <table>
+            <thead style="background-color: lightcoral;">
+                <tr>
+                    <th>Client Name</th>
+                    <th>Project Name</th>
+                    <th>Budget</th>
+                </tr>
+            </thead>
+            <tbody id="finances_table_rows">
+                <script>
+                    show_records()
+                    show_total()
+                </script>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <a href="index.html"><button type="button">Back</button></a> 
+</body>
