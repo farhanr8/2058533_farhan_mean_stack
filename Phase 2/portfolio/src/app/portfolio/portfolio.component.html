@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!-------------- LOGIN PAGE -------------->
+<div class="container">
+    <div *ngIf="loginPage" class="formBox" >
+        <h4>Login Page</h4> 
+        <br>
+        <form [formGroup]="loginRef" (ngSubmit)="checkUser()" class="form-group">
+            <label>UserName</label><br>
+            <input type="text" formControlName="user"/><br>
+            <label>Password</label><br>
+            <input type="password" formControlName="pass"/><br>
+            <br>
+            <input type="submit" value="Login" [disabled]="!loginRef.valid" class="btn btn-success"/>
+        </form>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-3"></div><div class="col-3"></div><div class="col-3"></div>
+            <div class="col-3">
+                <input type="button" value="Sign Up" (click)="showSignUp()" class="btn btn-secondary"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------------- SIGN UP PAGE  -------------->
+<div class="container">
+    <div *ngIf="signupPage" class="formBox">
+        <h4>Registration Form</h4>
+        <br>
+        <form [formGroup]="SignupRef" (ngSubmit)="AddUser()">
+            <div class="row">
+                <div class="col-3"> <label >First Name</label></div>
+                <div class=" col-3"><input type="text" formControlName="firstname"></div>
+            </div> 
+            <div class="row">
+                <div class="col-3"><label >Last Name</label> </div> 
+                <div class="col-3"><input type="text" formControlName="lastname"> </div> 
+            </div> 
+            <div class="row">
+                <div class="col-3"><label >Username</label></div>
+                <div class="col-3"><input type="text" formControlName="username"></div>
+            </div>
+             <div class="row">
+                <div class="col-3"><label >Password</label></div>
+                <div class="col-3"><input type="password" formControlName="password"></div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3"><input type="submit" value="Register" [disabled]="!SignupRef.valid" class="btn btn-success"/></div>
+                <div class="col-2"><input type="reset" value="Reset"  class="btn btn-secondary"/></div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-3"></div><div class="col-3"></div><div class="col-3"></div>
+            <div class="col-3">
+                <input type="button" value="Back to Login" (click)="showLogin()" class="btn btn-link"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------------- PROFILE PAGE  -------------->
+<div class="container">
+    <div *ngIf="profilePage" class="formBox">
+        <div class="row">
+            <div class="col-3"><h6>Welcome,</h6><h4>{{fullname}}</h4></div>
+            <div class="col-6"></div>
+            <div class="col-3"><input type="button" value="Sign out" (click)="signout()" class="btn btn-link"/></div>
+        </div>
+        <div class="row">
+            <div class="col-4"><label>Contact Name : </label></div>
+            <div class="col-2"><input type="text" #nameRef/></div>
+        </div>
+        <div class="row">
+            <div class="col-4"> <label>Phone No. : </label></div>
+            <div class="col-2"><input type="text" #phoneRef/></div>
+        </div> 
+        <br>
+        <input type="button" value="save" (click)="addContact(nameRef,phoneRef)" class="btn btn-success"/>
+        <br><br>
+
+        <table class="table table-bordered">
+            <thead class="thead-light">
+            <tr>
+                <th>Name</th>
+                <th>Phone No.</th>
+            </tr>
+        </thead>
+            <TR *ngFor="let contact of contacts">
+                <td>{{contact.name}}</td>
+                <td>{{contact.phone}}</td>
+            </TR>
+        </table>
+    </div>
+    
+</div>
