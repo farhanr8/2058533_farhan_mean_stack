@@ -65,6 +65,7 @@ export class PortfolioComponent implements OnInit {
     this.fullname = Signup.firstname + " " + Signup.lastname;
     this.username = Signup.username;
     this.password = Signup.password; 
+    this.contacts = [];
     alert("Registration Successful!");
     this.SignupRef.reset();
     this.showLogin(); 
