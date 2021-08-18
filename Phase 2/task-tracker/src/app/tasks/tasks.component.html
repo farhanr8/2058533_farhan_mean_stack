@@ -1,0 +1,59 @@
+<div>
+    <mat-grid-list cols="2">
+        <mat-grid-tile [style.background]="'skyblue'">
+            <mat-grid-tile-header >
+                <div>To-Do Tasks</div>
+            </mat-grid-tile-header>
+            <form (ngSubmit)="addTask(idRef, nameRef, taskRef, dateRef)">
+                <mat-form-field>
+                    <mat-label>Emp. ID</mat-label>
+                    <input matInput name="id" #idRef/>
+                </mat-form-field>
+                <br/>
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput name="name" #nameRef/>
+                </mat-form-field>
+                <br/>
+                <mat-form-field>
+                    <mat-label>Task</mat-label>
+                    <input matInput name="task" #taskRef/>
+                </mat-form-field>
+                <br/>
+                <mat-form-field>
+                    <mat-label>Deadline</mat-label>
+                    <input matInput name="deadline" #dateRef/>
+                </mat-form-field>
+                <br/>
+                <button type="submit" mat-raised-button color="primary" style="margin-right:20px">Submit</button>
+                <button type="reset" mat-raised-button style="background-color: bisque;">Reset</button>
+            </form>
+        </mat-grid-tile>
+
+        <mat-grid-tile [style.background]="'coral'">
+            <mat-grid-tile-header >
+                <div>To-Do List</div>
+            </mat-grid-tile-header>
+
+            <table style="width:75%">
+                <thead>
+                <tr>
+                    <th>Emp. Id</th>
+                    <th>Name</th>
+                    <th>Task</th>
+                    <th>Deadline</th>
+                </tr>
+            </thead>
+                <tr *ngFor="let t of tasks">
+                    <td>{{t.id}}</td>
+                    <td>{{t.name}}</td>
+                    <td>{{t.task}}</td>
+                    <td>{{t.deadline}}</td>
+                </tr>
+            </table>
+
+              
+        </mat-grid-tile>
+    </mat-grid-list>
+         
+</div>
