@@ -1,0 +1,26 @@
+<div class="center">
+    <h1 class="title">Online Test Application</h1>
+    <hr>
+    <form #formRef="ngForm" (ngSubmit)="checkAnswers()">
+        <div *ngFor="let q of questions">
+            <mat-label> 
+                ({{q.num}}) {{q.question}}
+            </mat-label>
+            <mat-radio-group [attr.id]=q.num>
+                <mat-radio-button value="a" (change)="userAnswer($event)"> {{q.answers[0].ans}} </mat-radio-button>
+                <mat-radio-button value="b" (change)="userAnswer($event)"> {{q.answers[1].ans}} </mat-radio-button>
+                <mat-radio-button value="c" (change)="userAnswer($event)"> {{q.answers[2].ans}} </mat-radio-button>
+                <mat-radio-button value="d" (change)="userAnswer($event)"> {{q.answers[3].ans}} </mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div>
+            <div id="results" class="hidden res">
+                <h2  >{{correct}} out of 10 : You {{msg}}</h2>
+                <button (click)="reloadPage()">Try again</button>
+            </div>
+            <button mat-raised-button color="primary" type="submit"> 
+                Submit 
+            </button>
+        </div>
+      </form>
+</div>

@@ -1,0 +1,112 @@
+[
+    {
+        "num":1,
+        "question":"What git command would you use to create a local repo?",
+        "answers":[
+            {"op1":"a","ans":"git add"},
+            {"op":"b","ans":"git init"},
+            {"op":"c","ans":"git status"},
+            {"op":"d","ans":"git commit"}
+        ],
+        "solution":"b"
+    },
+    {
+        "num":2,
+        "question":"What does git pull do?",
+        "answers":[
+            {"op":"a","ans":"Creates a new branch"},
+            {"op":"b","ans":"Stages local files"},
+            {"op":"c","ans":"Uploads data to a remote repo"},
+            {"op":"d","ans":"Downloads data from a remote repo"}
+        ],
+        "solution":"d"
+    },
+    {
+        "num":3,
+        "question":"Which of the following is not a valid HTML heading tag?",
+        "answers":[
+            {"op":"a","ans":"<h6>"},
+            {"op":"b","ans":"<h5>"},
+            {"op":"c","ans":"<h7>"},
+            {"op":"d","ans":"<h4>"}
+        ],
+        "solution":"c"
+    },
+    {
+        "num":4,
+        "question":"Which of the following is not a type of CSS?",
+        "answers":[
+            {"op":"a","ans":"Inline"},
+            {"op":"b","ans":"Outline"},
+            {"op":"c","ans":"External"},
+            {"op":"d","ans":"Internal"}
+        ],
+        "solution":"b"
+    },
+    {
+        "num":5,
+        "question":"Which of the following can not be used to declare variable in javascript?",
+        "answers":[
+            {"op":"a","ans":"let"},
+            {"op":"b","ans":"var"},
+            {"op":"c","ans":"const"},
+            {"op":"d","ans":"suppose"}
+        ],
+        "solution":"d"
+    },
+    {
+        "num":6,
+        "question":"How would you add bootstrap to you web page?",
+        "answers":[
+            {"op":"a","ans":"Using an url (CDN)"},
+            {"op":"b","ans":"Downloading the bootstrap file"},
+            {"op":"c","ans":"Using NodeJS"},
+            {"op":"d","ans":"All the above"}
+        ],
+        "solution":"d"
+    },
+    {
+        "num":7,
+        "question":"Which grid layout would you use for a device screen size of 700px?",
+        "answers":[
+            {"op":"a","ans":"extra small"},
+            {"op":"b","ans":"small"},
+            {"op":"c","ans":"medium"},
+            {"op":"d","ans":"large"}
+        ],
+        "solution":"b"
+    },
+    {
+        "num":8,
+        "question":"What is nodeJS?",
+        "answers":[
+            {"op":"a","ans":"Library"},
+            {"op":"b","ans":"Framework"},
+            {"op":"c","ans":"Run-time Environment"},
+            {"op":"d","ans":"Javascript Object"}
+        ],
+        "solution":"c"
+    },
+    {
+        "num":9,
+        "question":"Angular is part of which big tech company?",
+        "answers":[
+            {"op":"a","ans":"Google"},
+            {"op":"b","ans":"Facebook"},
+            {"op":"c","ans":"Amazon"},
+            {"op":"d","ans":"Microsoft"}
+        ],
+        "solution":"a"
+    },
+    {
+        "num":10,
+        "question":"Which decorator do we need to use to create a service class using DI concept?",
+        "answers":[
+            {"op":"a","ans":"@Service"},
+            {"op":"b","ans":"@DI"},
+            {"op":"c","ans":"@Injectable"},
+            {"op":"d","ans":"@NgModule"}
+        ],
+        "solution":"c"
+    }
+]
