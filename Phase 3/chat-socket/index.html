@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- connecting library file part of node_module folder -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+        var socket = io();
+        function chat(){
+            // Get user input
+            let msg = document.getElementById('msg').value;
+            // Append to chat history
+            var node = document.createElement("LI");
+            var d = new Date();
+            var n = d.toLocaleTimeString();
+            var textnode = document.createTextNode("("+n+") CLIENT: "+msg);
+            node.appendChild(textnode);
+            document.getElementById("messages").appendChild(node);
+            // Send to server
+            socket.emit("clientMsg",msg);
+            // Reset user input
+            document.getElementById("msg").value = "";
+            // Fix scroll
+            var elem = document.getElementById('data');
+            elem.scrollTop = elem.scrollHeight;
+        }
+
+        socket.on("serverMsg",(msg)=> {
+            console.log(msg);
+            var node = document.createElement("LI");
+            var d = new Date();
+            var n = d.toLocaleTimeString();
+            var textnode = document.createTextNode("("+n+") SERVER: "+msg);
+            node.appendChild(textnode);
+            document.getElementById("messages").appendChild(node);
+            // Fix scroll
+            var elem = document.getElementById('data');
+            elem.scrollTop = elem.scrollHeight;
+        })
+    </script>
+    <style type="text/css">
+        body {
+            max-width: 500px;
+            margin: auto; 
+        }
+        .chatbox{
+            text-align: center;
+            background-color: lightgray;
+            border: 2px solid red;
+            border-radius: 5px;
+            padding-bottom: 5px;
+            margin-top: 10px;
+        }
+        .chathistory {
+            height:350px;
+            overflow-y: scroll;
+            border: 2px solid red;
+            border-radius: 5px;
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="chatbox">
+        <h2>Chatting with Socket IO</h2>
+        <label>Client Message</label><br/>
+        <textarea type="text" name="msg" id="msg"></textarea><br/>
+        <input type="button" value="Send" onclick="chat()"/>
+    </div>
+    <br>
+    <div class="chathistory" id="data">
+        <h3 style="margin-left: 5px;">Chat Log</h3>
+        <ol id="messages"></ol>
+    </div>
+</body>
+</html>
