@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <h1>All Courses</h1>
+  <table style="text-align: center" id="table">
+    <tr>
+      <th>Course Id</th>
+      <th>Course Name</th>
+      <th>Description</th>
+      <th>Amount</th>
+    </tr>
+    <script>
+      fetch('http://localhost:9090/api/course/listCourses', {
+        method: 'GET'
+      })
+      .then(res => res.json())
+      .then(res => res.forEach(c => {
+        document.getElementById('table').innerHTML += 
+        `
+        <tr>
+          <td>${c._id}</td>
+          <td>${c.name}</td>
+          <td>${c.description}</td>
+          <td>${c.amount}</td>
+        </tr>
+        `
+      }))
+    </script>
+  </table>
+</body>
+</html>
