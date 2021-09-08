@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- connecting library file part of node_module folder -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+        var socket = io();
+        function chat(){
+            const data = {
+                name: document.getElementById('name').value,
+                msg: document.getElementById('msg').value,
+            }
+            socket.emit("chat", data);
+            document.getElementById('form').reset() 
+        }
+    </script>
+    <style type="text/css">
+        body {
+            max-width: 500px;
+            margin: auto; 
+        }
+        .chatbox{
+            text-align: center;
+            background-color: lightgray;
+            border: 2px solid red;
+            border-radius: 5px;
+            padding-bottom: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chatbox">
+        <h2>Chatlog</h2>
+        <label>Name</label><br>
+        <input type="text" id="name"/><br>
+        <br>
+        <form id="form">
+            <label>Message</label><br/>
+            <textarea type="text" id="msg"></textarea><br/>
+            <input type="button" value="send" onclick="chat()">
+            <input type="reset" value="reset"/>
+        </form>
+    </div>
+</body>
+</html>
